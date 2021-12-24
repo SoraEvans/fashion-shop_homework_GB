@@ -1,0 +1,154 @@
+@import "catalog";
+
+.carousel-block {
+  height: 777px;
+  background-color: #F7F7F7;
+  border-bottom: 1px solid $gray-color-400;
+
+  .carousel {
+    display: flex;
+    margin: auto;
+    text-align: -webkit-center;
+  }
+
+  .carousel-control-prev {
+    padding: 0 5px 0 0;
+  }
+
+  .carousel-control-next {
+    padding: 0 0 0 5px;
+  }
+
+  button {
+    width: 47px;
+    height: 47px;
+    margin: auto;
+    background-color: #2A2A2A26;
+
+    & > svg {
+      fill: black;
+    }
+  }
+}
+
+.chosen-product-section {
+  height: 664px;
+  position: relative;
+}
+
+.chosen-product-block {
+  padding: 65px;
+  font-weight: 300;
+  background-color: white;
+  text-align: center;
+  width: 1140px;
+  height: 601px;
+  top: -65px;
+  left: 0;
+  margin: auto;
+  right: 0;
+  position: absolute;
+  border: 1px solid $gray-color-400;
+
+  & > a {
+    text-decoration: none;
+  }
+}
+
+.chosen-product-title {
+  color: $pink-color-400;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.chosen-product-name {
+  font-weight: 300;
+  font-size: 18px;
+  color: #4D4D4D;
+  margin-bottom: 33px;
+}
+
+.bottom-pink-br {
+  display: block;
+  width: 63px;
+  margin: 12px auto;
+  border-bottom: 3px solid $pink-color-600;
+}
+
+.chosen-product-desc {
+  white-space: pre-wrap;
+  color: #5E5E5E;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0;
+}
+
+.chosen-product-price {
+  margin: 17px 0 62px;
+  font-size: 24px;
+  color: $pink-color-400;
+}
+
+.chosen-product-dropdowns-block {
+  justify-content: center;
+}
+
+.bottom-gray-br {
+  display: block;
+  width: 641px;
+  margin: 0 auto 59px;
+  border-bottom: 1px solid $gray-color-400;
+}
+
+.chosen-product-btn-container {
+  width: fit-content;
+  margin: 37px auto 0;
+}
+
+.chosen-product-button {
+  height: 47px;
+  width: 211px;
+  border: 1px solid #F16D7F;
+  background-color: transparent;
+  justify-content: space-evenly;
+  color: #F16D7F;
+  cursor: pointer !important;
+
+  .chosen-product-basket-icon {
+    margin-right: -15px;
+    height: 24px;
+    width: 26px;
+
+    & > svg {
+      width: 100%;
+      height: 100%;
+      fill: $pink-color-400;
+    }
+  }
+
+  &:hover {
+    background-color: $pink-color-400;
+    color: $main-white-color;
+
+    & .chosen-product-basket-icon > svg {
+      fill: white;
+    }
+  }
+}
+
+.chosen-product-dropdown-text {
+  color: #6F6E6E !important;
+}
+
+.chosen-product-products-list {
+  margin-bottom: 98px;
+}
+
+.dropdown-toggle:after {
+  width: 11px;
+  height: 6px;
+  vertical-align: 0.105em !important;
+  margin-left: 0.575em !important;
+  background: url("../assets/img/icons/arrow_down.svg") 0 0 no-repeat;
+  border: none !important;
+}
