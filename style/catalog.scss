@@ -21,18 +21,18 @@
   margin-bottom: 0 !important;
 
   .breadcrumb-item {
+    text-transform: uppercase;
+    font-size: 14px;
+
     a {
-      font-size: 14px;
       text-decoration: none;
       color: $main-gray-color !important;
-      text-transform: uppercase;
     }
   }
 
   .active {
-    & > a {
+    & > span {
       color: $pink-color-400 !important;
-      text-transform: uppercase;
     }
   }
 }
@@ -76,6 +76,7 @@
 
   &:checked ~ .filter__box {
     visibility: visible;
+    height: 541px;
     left: 0;
   }
 }
@@ -87,12 +88,14 @@
   top: -13px;
   font-size: 14px;
   width: 360px;
-  height: 541px;
+  height: 30px;
+  overflow: hidden;
   margin: 0;
   padding: 13px 16px;
   list-style: none;
   background-color: $main-white-color;
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  transition: all 1s ease-in-out;
 
   & > img {
     position: absolute;
