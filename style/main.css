@@ -1049,7 +1049,7 @@ footer {
 }
 .cart-product-card--input > label > input {
   margin-left: 24px;
-  text-align: center;
+  text-align: end;
   font-size: 18px;
   width: 44px;
   height: 24px;
