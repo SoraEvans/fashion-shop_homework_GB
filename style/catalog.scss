@@ -4,16 +4,33 @@
   height: 148px;
   background-color: $bg-light-pink-color;
 
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
   & > div {
     max-width: 1140px;
     width: 100%;
     justify-content: space-between;
     margin: auto;
+    @media (max-width: 375px) {
+      justify-content: center;
+      margin: 0;
+    }
 
     h1 {
       font-size: 24px;
       color: $pink-color-400;
+      @media (max-width: 375px) {
+        margin-top: 20px;
+      }
     }
+  }
+}
+
+.breadcrumb-mobile {
+  @media (max-width: 375px) {
+    margin-bottom: 40px;
   }
 }
 
@@ -33,6 +50,7 @@
   .active {
     & > span {
       color: $pink-color-400 !important;
+      font-weight: 700;
     }
   }
 }
@@ -43,6 +61,15 @@
   border: none !important;
   font-size: 14px;
   padding: 0;
+
+  svg {
+    width: 15px;
+    height: 11px;
+    @media (max-width: 375px) {
+      width: 37px;
+      height: 25px;
+    }
+  }
 }
 
 .filter-text {
@@ -52,7 +79,12 @@
 .filter-bar {
   margin: 51px auto 65px;
   position: relative;
-  width: 1140px;
+  max-width: 1140px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 }
 
 .filter-menu {
@@ -170,6 +202,17 @@
   position: absolute;
   top: -6px;
   width: 100%;
+  @media (max-width: 768px) {
+    top: 0;
+    position: initial;
+    width: auto;
+  }
+
+  & a {
+    @media (max-width: 375px) {
+      font-size: 12px !important;
+    }
+  }
 }
 
 .pagination {

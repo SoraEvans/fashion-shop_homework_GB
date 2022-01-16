@@ -5,25 +5,50 @@
   width: 100%;
   margin: 96px auto 128px;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-top: 59px;
+  }
+  @media (max-width: 375px) {
+    margin: 36px auto 96px;
+  }
 }
 
 .cart-product-card {
   margin-bottom: 40px;
-  width: 652px;
+  max-width: 652px;
+  width: 100vw;
   height: 306px;
   flex-wrap: nowrap;
   filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
   background: white;
+  @media (max-width: 768px) {
+    max-width: 734px;
+  }
+  @media (max-width: 375px) {
+    max-width: 358px;
+    margin: 0 auto 32px;
+    height: 188px;
+  }
 
   h1 {
     width: 200px;
     font-size: 24px;
     margin-bottom: 42px;
+    @media (max-width: 375px) {
+      width: 140px;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
   }
 
   & > img {
     width: 262px;
     height: 306px;
+    @media (max-width: 375px) {
+      width: 144px;
+      height: 188px;
+    }
   }
 }
 
@@ -47,11 +72,23 @@
   font-size: 14px;
   width: 224px;
   height: 49px;
+  @media (max-width: 375px) {
+    width: 174px;
+    height: 32px;
+    font-size: 12px;
+  }
 }
 
 .cart-product-buttons-block {
   margin-top: 72px;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    margin-top: 62px;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 375px) {
+    margin-top: 30px;
+  }
 }
 
 .cart-form-btn {
@@ -67,6 +104,10 @@
   padding: 22px 22px 22px 31px;
   color: #575757;
   font-size: 22px;
+  @media (max-width: 375px) {
+    padding: 13px 17px;
+    font-size: 14px;
+  }
 
   & > div:first-child {
     justify-content: space-between;
@@ -80,6 +121,10 @@
   > p {
     margin-bottom: 6px;
     height: 26px;
+    @media (max-width: 375px) {
+      margin-bottom: 3px;
+      height: 16px;
+    }
 
     & > span {
       color: $pink-color-400;
@@ -106,8 +151,18 @@
 }
 
 .cart-form-container {
+  flex-direction: column;
   max-width: 360px;
   width: 100%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 64px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 375px) {
+    margin-top: 48px;
+  }
 }
 
 .cart-form {
@@ -117,6 +172,7 @@
   h2 {
     font-size: 16px;
     font-weight: 300;
+    margin-bottom: 0;
   }
 
   input {
@@ -138,6 +194,9 @@
   max-width: 360px;
   width: 100%;
   text-align: right;
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 
   .cart-br-line {
     margin-top: 7px;
