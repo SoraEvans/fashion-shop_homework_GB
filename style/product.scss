@@ -4,11 +4,30 @@
   height: 777px;
   background-color: #F7F7F7;
   border-bottom: 1px solid $gray-color-400;
+  @media (max-width: 768px) {
+    height: 624px;
+  }
+
+  img {
+    @media (max-width: 768px) {
+      width: 466px;
+    }
+
+    @media (max-width: 375px) {
+      width: 374px;
+    }
+  }
 
   .carousel {
     display: flex;
     margin: auto;
     text-align: -webkit-center;
+
+    @media (max-width: 375px) {
+      height: inherit;
+      align-items: center;
+    }
+
   }
 
   .carousel-control-prev {
@@ -50,6 +69,14 @@
   right: 0;
   position: absolute;
   border: 1px solid $gray-color-400;
+  @media (max-width: 768px) {
+    max-width: 768px;
+  }
+  @media (max-width: 375px) {
+    max-width: 375px;
+    padding: 65px 25px;
+    top: 0;
+  }
 
   & > a {
     text-decoration: none;
@@ -83,12 +110,19 @@
   font-size: 14px;
   line-height: 17px;
   margin: 0;
+  @media (max-width: 375px) {
+    margin-top: 10px;
+    white-space: normal;
+  }
 }
 
 .chosen-product-price {
   margin: 17px 0 62px;
   font-size: 24px;
   color: $pink-color-400;
+  @media (max-width: 375px) {
+    margin: 32px auto 32px;
+  }
 }
 
 .chosen-product-dropdowns-block {
@@ -101,6 +135,10 @@
   margin: 0 auto 59px;
   background-color: $gray-color-400;
   opacity: 1;
+  @media (max-width: 375px) {
+    max-width: 174px;
+    margin: 0 auto 49px;
+  }
 }
 
 .chosen-product-button {
@@ -112,6 +150,10 @@
   margin: 37px auto 0;
   color: $pink-color-400;
   cursor: pointer !important;
+
+  @media (max-width: 375px) {
+    margin: 60px auto 0;
+  }
 
   .chosen-product-basket-icon {
     margin-right: -15px;
@@ -137,10 +179,16 @@
 
 .chosen-product-dropdown-text {
   color: #6F6E6E !important;
+  @media (max-width: 375px) {
+    font-size: 10px !important;
+  }
 }
 
 .chosen-product-products-list {
   margin-bottom: 98px;
+  @media (max-width: 375px) {
+    margin-bottom: 64px;
+  }
 }
 
 .dropdown-toggle:after {
@@ -150,4 +198,10 @@
   margin-left: 0.575em !important;
   background: url("../assets/img/icons/arrow_down.svg") 0 0 no-repeat;
   border: none !important;
+}
+
+.product-card-mobile {
+  @media (max-width: 375px) {
+    margin-bottom: 0 !important;
+  }
 }
