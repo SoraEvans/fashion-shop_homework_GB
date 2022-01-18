@@ -42,6 +42,16 @@ body::-webkit-scrollbar {
   }
 }
 
+.mobile-show {
+  display: none;
+  text-decoration: none;
+}
+@media (max-width: 375px) {
+  .mobile-show {
+    display: inline;
+  }
+}
+
 /* ========================================== header =============================================== */
 header {
   display: grid;
@@ -121,7 +131,7 @@ header > div > div > button {
 .page-header-search-btn {
   width: 0;
   min-height: 0;
-  padding: 5px;
+  padding: 0;
   background-color: transparent;
   border: none;
   position: absolute;
@@ -131,9 +141,16 @@ header > div > div > button {
   font-size: 16px;
   transition: all 1s ease;
 }
+@media (max-width: 375px) {
+  .page-header-search-btn {
+    background-color: #222222;
+    color: #FFFFFF;
+  }
+}
 .page-header-search-btn:focus {
   width: 150px;
   min-height: 20px;
+  padding: 5px;
 }
 .page-header-search-btn ~ label > svg {
   transition: all 1s ease;
@@ -202,12 +219,14 @@ header > div > div > button {
 .burger-title {
   font-weight: 700;
   color: #222222 !important;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  cursor: default !important;
 }
 
 .menu__box {
   z-index: 2;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   visibility: hidden;
   top: 75px;
@@ -228,6 +247,13 @@ header > div > div > button {
   line-height: 1.5;
   list-style-type: none;
   margin: 11px 0;
+  width: max-content;
+}
+.menu__box > ul ol > li {
+  cursor: pointer;
+}
+.menu__box > ul ol > li:hover {
+  color: #F16D7F;
 }
 .menu__box > ul > li {
   margin-top: 20px;
@@ -240,6 +266,7 @@ header > div > div > button {
   list-style-type: none;
 }
 .menu__box span {
+  cursor: pointer;
   color: #F16D7F;
 }
 
@@ -663,6 +690,11 @@ footer {
     height: 693px;
   }
 }
+@media (max-width: 375px) {
+  .footer-subscribe-info {
+    height: 550px;
+  }
+}
 .footer-subscribe-info > div {
   background: url("../assets/img/pictures/footer_bg.png") 0 0 no-repeat;
   display: flex;
@@ -683,6 +715,7 @@ footer {
 @media (max-width: 375px) {
   .footer-subscribe-info > div {
     padding: 0 16px;
+    justify-content: flex-start;
   }
 }
 .footer-subscribe-info > div:before {
@@ -699,6 +732,11 @@ footer {
   font-weight: 400;
   line-height: 24px;
 }
+@media (max-width: 375px) {
+  .footer-subscribe-info > div > div:first-child {
+    margin-top: 50px;
+  }
+}
 .footer-subscribe-info > div > div:first-child > img {
   margin-bottom: 30px;
 }
@@ -707,6 +745,11 @@ footer {
   font-weight: 700;
   white-space: pre-line;
   line-height: 30px;
+}
+@media (max-width: 375px) {
+  .footer-subscribe-info > div > div:nth-child(2) > p {
+    flex-grow: 1;
+  }
 }
 .footer-subscribe-info > div > div:nth-child(2) > p > span {
   font-size: 18px;
@@ -1388,8 +1431,16 @@ footer {
   justify-content: space-between;
 }
 .cart-product-card--content svg {
+  width: 18px;
+  height: 18px;
   margin-top: 5px;
   cursor: pointer;
+}
+@media (max-width: 375px) {
+  .cart-product-card--content svg {
+    width: 11px;
+    height: 11px;
+  }
 }
 .cart-product-card--content > p {
   margin-bottom: 6px;
@@ -1413,10 +1464,18 @@ footer {
 }
 .cart-product-card--input > label > input {
   margin-left: 24px;
-  text-align: end;
+  text-align: center;
   font-size: 18px;
   width: 44px;
   height: 24px;
+  border: 1px solid #EAEAEA;
+}
+@media (max-width: 375px) {
+  .cart-product-card--input > label > input {
+    font-size: 10px;
+    width: 23px;
+    height: 15px;
+  }
 }
 
 .cart-form-container {
@@ -1512,6 +1571,16 @@ footer {
 .reg-content {
   padding: 64px 64px 96px;
 }
+@media (max-width: 768px) {
+  .reg-content {
+    padding: 40px 16px 96px;
+  }
+}
+@media (max-width: 375px) {
+  .reg-content {
+    padding: 40px 8px 96px;
+  }
+}
 .reg-content > div {
   justify-content: space-between;
   margin: auto;
@@ -1536,7 +1605,8 @@ footer {
 }
 
 .reg-form-block-input {
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 45px;
   margin-top: 20px;
   padding: 14px 17px;
@@ -1604,6 +1674,17 @@ footer {
   line-height: 28.8px;
   max-width: 650px;
 }
+@media (max-width: 768px) {
+  .reg-benefits {
+    max-width: 360px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .reg-benefits {
+    margin-top: 48px;
+  }
+}
 .reg-benefits p {
   margin-bottom: 21px;
 }
@@ -1615,6 +1696,12 @@ footer {
   margin-bottom: 22px;
   font-size: 24px;
   font-weight: 300;
+}
+@media (max-width: 768px) {
+  .reg-benefits h2 {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

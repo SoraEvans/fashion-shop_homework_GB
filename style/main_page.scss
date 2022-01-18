@@ -44,6 +44,14 @@ body {
   }
 }
 
+.mobile-show {
+  display: none;
+  text-decoration: none;
+  @media (max-width: 375px) {
+    display: inline;
+  }
+}
+
 /* ========================================== header =============================================== */
 
 header {
@@ -132,7 +140,7 @@ header {
 .page-header-search-btn {
   width: 0;
   min-height: 0;
-  padding: 5px;
+  padding: 0;
   background-color: transparent;
   border: none;
   position: absolute;
@@ -142,9 +150,15 @@ header {
   font-size: 16px;
   transition: all 1s ease;
 
+  @media (max-width: 375px) {
+    background-color: $main-black-color;
+    color: $main-white-color;
+  }
+
   &:focus {
     width: 150px;
     min-height: 20px;
+    padding: 5px;
   }
 
   & ~ label > svg {
@@ -227,12 +241,14 @@ header {
 .burger-title {
   font-weight: 700;
   color: $main-black-color !important;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  cursor: default !important;
 }
 
 .menu__box {
   z-index: 2;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   visibility: hidden;
   top: 75px;
@@ -254,6 +270,15 @@ header {
     line-height: 1.5;
     list-style-type: none;
     margin: 11px 0;
+    width: max-content;
+  }
+
+  & > ul ol > li {
+    cursor: pointer;
+
+    &:hover {
+      color: $pink-color-400;
+    }
   }
 
   & > ul > li {
@@ -270,6 +295,7 @@ header {
   }
 
   span {
+    cursor: pointer;
     color: $pink-color-400;
   }
 }
@@ -712,6 +738,10 @@ footer {
     height: 693px;
   }
 
+  @media (max-width: 375px) {
+    height: 550px;
+  }
+
   & > div {
     background: url("../assets/img/pictures/footer_bg.png") 0 0 no-repeat;
     display: flex;
@@ -730,6 +760,7 @@ footer {
 
     @media (max-width: 375px) {
       padding: 0 16px;
+      justify-content: flex-start;
     }
 
     &:before {
@@ -747,6 +778,9 @@ footer {
       font-size: 20px;
       font-weight: 400;
       line-height: 24px;
+      @media (max-width: 375px) {
+        margin-top: 50px;
+      }
 
       & > img {
         margin-bottom: 30px;
@@ -758,6 +792,9 @@ footer {
       font-weight: 700;
       white-space: pre-line;
       line-height: 30px;
+      @media (max-width: 375px) {
+        flex-grow: 1;
+      }
 
       & > span {
         font-size: 18px;
