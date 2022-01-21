@@ -168,6 +168,10 @@
     line-height: 16.8px;
   }
 
+  & > ul li > a:hover {
+    color: $pink-color-400;
+  }
+
   & > ol {
     list-style-type: none;
   }
@@ -175,6 +179,10 @@
   p {
     color: $pink-color-400;
   }
+  .filter-point {
+    color: #6F6E6E;
+  }
+
 }
 
 .filter__item {
@@ -195,6 +203,62 @@
   color: $main-gray-color !important;
   border: none !important;
   font-size: 14px !important;
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  min-width: 103px !important;
+  border: none !important;
+}
+
+.dropdown-item {
+  display: flex !important;
+  align-items: end;
+
+  &:active {
+    background-color: transparent !important;
+  }
+
+  &:hover {
+    background-color: transparent !important;
+    label:before {
+      box-shadow: 0 0 0 2px $bg-light-pink-color;
+    }
+  }
+
+  label {
+    height: 22px;
+    margin-right: 9px;
+  }
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  color: #6F6E6E;
+  user-select: none;
+}
+
+.custom-checkbox+label::before {
+  content: '';
+  display: flex;
+  width: 13px;
+  height: 13px;
+  outline: 1px solid #EBEBEB;
+  margin-right: 9px;
+}
+
+.custom-checkbox:checked+label::before {
+  border-color: $pink-color-600;
+  background: url("../assets/img/icons/check_mark_pink.svg") 0 2px no-repeat;
+  background-size: contain;
 }
 
 .dropdowns-block {
@@ -224,6 +288,10 @@
   justify-content: space-around;
 
   .page-item {
+    flex: 1;
+    text-align: center;
+    color: #c5c5c5;
+
     :first-child, :last-child {
       height: 56px;
     }
@@ -240,4 +308,16 @@
       }
     }
   }
+}
+
+.flex-0 {
+  flex: 0 !important;
+}
+
+.mar-l-8 {
+  margin-left: 8px;
+}
+
+.mar-r-8 {
+  margin-right: 8px;
 }

@@ -92,17 +92,14 @@
   }
 
   &:hover {
-    color: $main-black-color;
-    fill: $main-black-color;
-    background-color: $main-white-color;
+    background-color: $pink-color-600;
   }
 
   &:active {
     background-color: transparent;
-    border: 1px solid $main-white-color;
-    border-radius: 3px;
-    fill: $main-white-color;
-    color: $main-white-color;
+    border: 1px solid $pink-color-700;
+    fill: $pink-color-700;
+    color: $pink-color-700;
   }
 }
 

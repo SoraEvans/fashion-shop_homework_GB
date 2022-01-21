@@ -59,7 +59,7 @@
 
   &:hover {
     background-color: $gray-color-200;
-    color: black;
+    color: $main-white-color;
   }
 
   &:active {
@@ -153,6 +153,13 @@
       width: 44px;
       height: 24px;
       border: 1px solid $gray-color-400;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
       @media (max-width: 375px) {
         font-size: 10px;
         width: 23px;

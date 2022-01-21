@@ -334,7 +334,7 @@ header > div > div > button {
   height: max-content;
   color: #FFFFFF;
   border-left: 12px solid #F16D7F;
-  padding-left: 16px;
+  padding: 8px 0 0 16px;
   cursor: default;
 }
 @media (max-width: 375px) {
@@ -442,7 +442,8 @@ header > div > div > button {
 }
 .assortment .offer > div > p {
   margin-bottom: -3px;
-  line-height: 28.8px;
+  line-height: 32.8px;
+  font-weight: 300 !important;
 }
 .assortment .offer > div > h2 {
   color: #F16D7F;
@@ -585,7 +586,6 @@ header > div > div > button {
   margin: auto;
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  border-radius: 3px;
   cursor: pointer;
   fill: #FFFFFF;
   font-size: 14px;
@@ -602,7 +602,6 @@ header > div > div > button {
 .buy-button:active {
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  border-radius: 3px;
   fill: #FFFFFF;
   color: #FFFFFF;
 }
@@ -615,7 +614,6 @@ header > div > div > button {
   width: 100%;
   color: #F16D7F;
   border: 1px solid #F16D7F;
-  border-radius: 3px;
   background-color: transparent;
   justify-content: center;
   margin: 18px auto 0;
@@ -1026,11 +1024,17 @@ footer {
   color: #6F6E6E;
   line-height: 16.8px;
 }
+.filter__box > ul li > a:hover {
+  color: #F16D7F;
+}
 .filter__box > ol {
   list-style-type: none;
 }
 .filter__box p {
   color: #F16D7F;
+}
+.filter__box .filter-point {
+  color: #6F6E6E;
 }
 
 .filter__item {
@@ -1050,6 +1054,59 @@ footer {
   color: #636363 !important;
   border: none !important;
   font-size: 14px !important;
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  min-width: 103px !important;
+  border: none !important;
+}
+
+.dropdown-item {
+  display: flex !important;
+  align-items: end;
+}
+.dropdown-item:active {
+  background-color: transparent !important;
+}
+.dropdown-item:hover {
+  background-color: transparent !important;
+}
+.dropdown-item:hover label:before {
+  box-shadow: 0 0 0 2px #F1E4E6;
+}
+.dropdown-item label {
+  height: 22px;
+  margin-right: 9px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  color: #6F6E6E;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: "";
+  display: flex;
+  width: 13px;
+  height: 13px;
+  outline: 1px solid #EBEBEB;
+  margin-right: 9px;
+}
+
+.custom-checkbox:checked + label::before {
+  border-color: #EF5B70;
+  background: url("../assets/img/icons/check_mark_pink.svg") 0 2px no-repeat;
+  background-size: contain;
 }
 
 .dropdowns-block {
@@ -1079,6 +1136,11 @@ footer {
   width: 284px;
   justify-content: space-around;
 }
+.pagination .page-item {
+  flex: 1;
+  text-align: center;
+  color: #c5c5c5;
+}
 .pagination .page-item :first-child, .pagination .page-item :last-child {
   height: 56px;
 }
@@ -1089,6 +1151,18 @@ footer {
 }
 .pagination .page-item.active > a {
   color: #EF5B70;
+}
+
+.flex-0 {
+  flex: 0 !important;
+}
+
+.mar-l-8 {
+  margin-left: 8px;
+}
+
+.mar-r-8 {
+  margin-right: 8px;
 }
 
 .carousel-block {
@@ -1373,7 +1447,7 @@ footer {
 }
 .cart-form-btn:hover, .cart-product-card--button:hover {
   background-color: #A4A4A4;
-  color: black;
+  color: #FFFFFF;
 }
 .cart-form-btn:active, .cart-product-card--button:active {
   background-color: #888888;
@@ -1469,6 +1543,10 @@ footer {
   width: 44px;
   height: 24px;
   border: 1px solid #EAEAEA;
+}
+.cart-product-card--input > label > input::-webkit-outer-spin-button, .cart-product-card--input > label > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 @media (max-width: 375px) {
   .cart-product-card--input > label > input {
@@ -1656,16 +1734,13 @@ footer {
   width: 25px;
 }
 .join-button:hover {
-  color: #222222;
-  fill: #222222;
-  background-color: #FFFFFF;
+  background-color: #EF5B70;
 }
 .join-button:active {
   background-color: transparent;
-  border: 1px solid #FFFFFF;
-  border-radius: 3px;
-  fill: #FFFFFF;
-  color: #FFFFFF;
+  border: 1px solid #FF415B;
+  fill: #FF415B;
+  color: #FF415B;
 }
 
 .reg-benefits {
