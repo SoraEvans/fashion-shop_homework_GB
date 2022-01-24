@@ -180,7 +180,6 @@ header > div > div > button {
 }
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
-  right: 0;
 }
 
 .menu__btn > span:after, .menu__btn > span:before, .menu__btn > span {
@@ -230,6 +229,7 @@ header > div > div > button {
   position: absolute;
   visibility: hidden;
   top: 75px;
+  right: 0;
   font-size: 14px;
   width: 300px;
   height: 764px;
