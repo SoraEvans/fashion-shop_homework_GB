@@ -42,6 +42,16 @@ body::-webkit-scrollbar {
   }
 }
 
+.mobile-show {
+  display: none;
+  text-decoration: none;
+}
+@media (max-width: 375px) {
+  .mobile-show {
+    display: inline;
+  }
+}
+
 /* ========================================== header =============================================== */
 header {
   display: grid;
@@ -121,7 +131,7 @@ header > div > div > button {
 .page-header-search-btn {
   width: 0;
   min-height: 0;
-  padding: 5px;
+  padding: 0;
   background-color: transparent;
   border: none;
   position: absolute;
@@ -131,9 +141,16 @@ header > div > div > button {
   font-size: 16px;
   transition: all 1s ease;
 }
+@media (max-width: 375px) {
+  .page-header-search-btn {
+    background-color: #222222;
+    color: #FFFFFF;
+  }
+}
 .page-header-search-btn:focus {
   width: 150px;
   min-height: 20px;
+  padding: 5px;
 }
 .page-header-search-btn ~ label > svg {
   transition: all 1s ease;
@@ -163,7 +180,6 @@ header > div > div > button {
 }
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
-  right: 0;
 }
 
 .menu__btn > span:after, .menu__btn > span:before, .menu__btn > span {
@@ -202,15 +218,18 @@ header > div > div > button {
 .burger-title {
   font-weight: 700;
   color: #222222 !important;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  cursor: default !important;
 }
 
 .menu__box {
   z-index: 2;
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   visibility: hidden;
   top: 75px;
+  right: 0;
   font-size: 14px;
   width: 300px;
   height: 764px;
@@ -228,6 +247,13 @@ header > div > div > button {
   line-height: 1.5;
   list-style-type: none;
   margin: 11px 0;
+  width: max-content;
+}
+.menu__box > ul ol > li {
+  cursor: pointer;
+}
+.menu__box > ul ol > li:hover {
+  color: #F16D7F;
 }
 .menu__box > ul > li {
   margin-top: 20px;
@@ -240,6 +266,7 @@ header > div > div > button {
   list-style-type: none;
 }
 .menu__box span {
+  cursor: pointer;
   color: #F16D7F;
 }
 
@@ -307,7 +334,7 @@ header > div > div > button {
   height: max-content;
   color: #FFFFFF;
   border-left: 12px solid #F16D7F;
-  padding-left: 16px;
+  padding: 8px 0 0 16px;
   cursor: default;
 }
 @media (max-width: 375px) {
@@ -415,7 +442,8 @@ header > div > div > button {
 }
 .assortment .offer > div > p {
   margin-bottom: -3px;
-  line-height: 28.8px;
+  line-height: 32.8px;
+  font-weight: 300 !important;
 }
 .assortment .offer > div > h2 {
   color: #F16D7F;
@@ -558,7 +586,6 @@ header > div > div > button {
   margin: auto;
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  border-radius: 3px;
   cursor: pointer;
   fill: #FFFFFF;
   font-size: 14px;
@@ -575,7 +602,6 @@ header > div > div > button {
 .buy-button:active {
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  border-radius: 3px;
   fill: #FFFFFF;
   color: #FFFFFF;
 }
@@ -588,7 +614,6 @@ header > div > div > button {
   width: 100%;
   color: #F16D7F;
   border: 1px solid #F16D7F;
-  border-radius: 3px;
   background-color: transparent;
   justify-content: center;
   margin: 18px auto 0;
@@ -663,6 +688,11 @@ footer {
     height: 693px;
   }
 }
+@media (max-width: 375px) {
+  .footer-subscribe-info {
+    height: 550px;
+  }
+}
 .footer-subscribe-info > div {
   background: url("../assets/img/pictures/footer_bg.png") 0 0 no-repeat;
   display: flex;
@@ -683,6 +713,7 @@ footer {
 @media (max-width: 375px) {
   .footer-subscribe-info > div {
     padding: 0 16px;
+    justify-content: flex-start;
   }
 }
 .footer-subscribe-info > div:before {
@@ -699,6 +730,11 @@ footer {
   font-weight: 400;
   line-height: 24px;
 }
+@media (max-width: 375px) {
+  .footer-subscribe-info > div > div:first-child {
+    margin-top: 50px;
+  }
+}
 .footer-subscribe-info > div > div:first-child > img {
   margin-bottom: 30px;
 }
@@ -707,6 +743,11 @@ footer {
   font-weight: 700;
   white-space: pre-line;
   line-height: 30px;
+}
+@media (max-width: 375px) {
+  .footer-subscribe-info > div > div:nth-child(2) > p {
+    flex-grow: 1;
+  }
 }
 .footer-subscribe-info > div > div:nth-child(2) > p > span {
   font-size: 18px;
@@ -983,11 +1024,17 @@ footer {
   color: #6F6E6E;
   line-height: 16.8px;
 }
+.filter__box > ul li > a:hover {
+  color: #F16D7F;
+}
 .filter__box > ol {
   list-style-type: none;
 }
 .filter__box p {
   color: #F16D7F;
+}
+.filter__box .filter-point {
+  color: #6F6E6E;
 }
 
 .filter__item {
@@ -1007,6 +1054,59 @@ footer {
   color: #636363 !important;
   border: none !important;
   font-size: 14px !important;
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  min-width: 103px !important;
+  border: none !important;
+}
+
+.dropdown-item {
+  display: flex !important;
+  align-items: end;
+}
+.dropdown-item:active {
+  background-color: transparent !important;
+}
+.dropdown-item:hover {
+  background-color: transparent !important;
+}
+.dropdown-item:hover label:before {
+  box-shadow: 0 0 0 2px #F1E4E6;
+}
+.dropdown-item label {
+  height: 22px;
+  margin-right: 9px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  color: #6F6E6E;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: "";
+  display: flex;
+  width: 13px;
+  height: 13px;
+  outline: 1px solid #EBEBEB;
+  margin-right: 9px;
+}
+
+.custom-checkbox:checked + label::before {
+  border-color: #EF5B70;
+  background: url("../assets/img/icons/check_mark_pink.svg") 0 2px no-repeat;
+  background-size: contain;
 }
 
 .dropdowns-block {
@@ -1036,6 +1136,11 @@ footer {
   width: 284px;
   justify-content: space-around;
 }
+.pagination .page-item {
+  flex: 1;
+  text-align: center;
+  color: #c5c5c5;
+}
 .pagination .page-item :first-child, .pagination .page-item :last-child {
   height: 56px;
 }
@@ -1046,6 +1151,18 @@ footer {
 }
 .pagination .page-item.active > a {
   color: #EF5B70;
+}
+
+.flex-0 {
+  flex: 0 !important;
+}
+
+.mar-l-8 {
+  margin-left: 8px;
+}
+
+.mar-r-8 {
+  margin-right: 8px;
 }
 
 .carousel-block {
@@ -1330,7 +1447,7 @@ footer {
 }
 .cart-form-btn:hover, .cart-product-card--button:hover {
   background-color: #A4A4A4;
-  color: black;
+  color: #FFFFFF;
 }
 .cart-form-btn:active, .cart-product-card--button:active {
   background-color: #888888;
@@ -1388,8 +1505,16 @@ footer {
   justify-content: space-between;
 }
 .cart-product-card--content svg {
+  width: 18px;
+  height: 18px;
   margin-top: 5px;
   cursor: pointer;
+}
+@media (max-width: 375px) {
+  .cart-product-card--content svg {
+    width: 11px;
+    height: 11px;
+  }
 }
 .cart-product-card--content > p {
   margin-bottom: 6px;
@@ -1413,10 +1538,22 @@ footer {
 }
 .cart-product-card--input > label > input {
   margin-left: 24px;
-  text-align: end;
+  text-align: center;
   font-size: 18px;
   width: 44px;
   height: 24px;
+  border: 1px solid #EAEAEA;
+}
+.cart-product-card--input > label > input::-webkit-outer-spin-button, .cart-product-card--input > label > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 375px) {
+  .cart-product-card--input > label > input {
+    font-size: 10px;
+    width: 23px;
+    height: 15px;
+  }
 }
 
 .cart-form-container {
@@ -1512,6 +1649,16 @@ footer {
 .reg-content {
   padding: 64px 64px 96px;
 }
+@media (max-width: 768px) {
+  .reg-content {
+    padding: 40px 16px 96px;
+  }
+}
+@media (max-width: 375px) {
+  .reg-content {
+    padding: 40px 8px 96px;
+  }
+}
 .reg-content > div {
   justify-content: space-between;
   margin: auto;
@@ -1536,7 +1683,8 @@ footer {
 }
 
 .reg-form-block-input {
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   height: 45px;
   margin-top: 20px;
   padding: 14px 17px;
@@ -1586,16 +1734,13 @@ footer {
   width: 25px;
 }
 .join-button:hover {
-  color: #222222;
-  fill: #222222;
-  background-color: #FFFFFF;
+  background-color: #EF5B70;
 }
 .join-button:active {
   background-color: transparent;
-  border: 1px solid #FFFFFF;
-  border-radius: 3px;
-  fill: #FFFFFF;
-  color: #FFFFFF;
+  border: 1px solid #FF415B;
+  fill: #FF415B;
+  color: #FF415B;
 }
 
 .reg-benefits {
@@ -1603,6 +1748,17 @@ footer {
   font-size: 24px;
   line-height: 28.8px;
   max-width: 650px;
+}
+@media (max-width: 768px) {
+  .reg-benefits {
+    max-width: 360px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .reg-benefits {
+    margin-top: 48px;
+  }
 }
 .reg-benefits p {
   margin-bottom: 21px;
@@ -1615,6 +1771,12 @@ footer {
   margin-bottom: 22px;
   font-size: 24px;
   font-weight: 300;
+}
+@media (max-width: 768px) {
+  .reg-benefits h2 {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
