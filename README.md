@@ -1,7 +1,9 @@
 # Homework GB
 
-## Проект был сделан в рамках курса по вёрстке. 
+## The project was made as part of a layout course
 
-### Проект представляет из себя лендинг интернет магазина. Осуществлялась работа с видео, а так же присутствует адаптивная верстка.
+### The project is a landing page for an online store. The work was done with video, and there is also an adaptive layout
 
-Сайт https://soraevans.github.io/fashion-shop_homework_GB/
+#### Stack: HTML/CSS/JS
+#### Project: https://soraevans.github.io/fashion-shop_homework_GB
+![image](https://github.com/SoraEvans/fashion-shop_homework_GB/assets/96630749/46ce0d5e-82b3-4c36-99f7-45f669ddfa17)
